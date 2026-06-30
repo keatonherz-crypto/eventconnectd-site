@@ -1,0 +1,262 @@
+Event ConnecTD — Homepage Redesign Docs
+Based on whiteboard wireframe session. One section per card for design prompting.
+Brand tokens for all sections:
+Primary Navy: #185FA5
+Dark Navy: #0D2137
+Teal (accent): #1D9E75
+Background: White #FFFFFF / Light gray #F7F9FC
+Typography: Clean, professional sans-serif; hero headlines bold/heavy weight
+Section 1 — Navigation Bar
+Purpose: Anchor the brand and make the primary action always accessible.
+Layout: Full-width horizontal bar. Logo left-aligned. Nav links center or right. Sticky on
+scroll.
+Content:
+Logo: “Event ConnecTD” wordmark (with teal “TD” treatment)
+Nav links: How It Works · For Companies · For Travel Directors · Pricing
+Right CTA button: “Submit an RFP” — teal fill, white text, rounded
+Design notes:
+Thin 1px bottom border in light gray to separate from hero
+On scroll: add subtle drop shadow and white background if hero is image-based
+Mobile: hamburger collapse
+Section 2 — Hero
+Purpose: Immediately answer “What is this?” and get the visitor to submit an RFP. This
+
+-- 1 of 9 --
+
+is the thesis of the page.
+Headline (primary messaging from whiteboard):
+“No More Random TDs. We’re Part of Your Team.”
+Subheadline:
+Event ConnecTD connects corporate event planners and incentive travel companies
+with pre-vetted, experienced Travel Directors — faster than LinkedIn, cheaper than a
+staffing agency.
+Primary CTA: Submit Your RFP → (teal button, prominent) Secondary CTA: Browse
+Travel Directors (ghost/outline button)
+Layout: Two-column split.
+Left column: Headline, subhead, CTAs, small trust signal (e.g., “18% finder’s fee —
+vs. 20–22% industry standard”)
+Right column: Hero image — a professional event TD in action (conference floor,
+incentive trip backdrop, or group logistics setting)
+Trust bar below hero (thin strip):
+Trusted by corporate event planners across the MICE industry · Vetted TD network ·
+RFP turnaround in 48 hours
+Design notes:
+Hero background: Dark navy #0D2137 with white headline text — high contrast
+Teal used as accent on key phrase (“No More Random TDs” underline or highlight)
+Image should feel real and human, not stock-generic
+Mobile: stack vertically, image below headline
+Section 3 — Service Category Tabs (“RFP | P.S. | W.M.”)
+Purpose: Show clients the three ways they can engage — the types of TD support
+available. Differentiates the platform and educates visitors on scope. The “We Manage”
+badge communicates this is a managed marketplace, not a raw directory.
+Section eyebrow label: WHAT WE HELP YOU STAFF
+Three Tab Cards:
+
+-- 2 of 9 --
+
+Tab 1 — RFP Support
+Label: RFP Headline: Request for Proposal Management Body: Need a TD to manage
+vendor coordination and logistics documentation? We match you with the right
+specialist for your program scope. Icon: Document/clipboard icon
+Tab 2 — Program Specialists
+Label: P.S. Headline: On-Site Program Specialists Body: On-the-ground execution
+experts who manage attendee experiences, hotel blocks, and day-of operations for
+incentive trips and conferences. Icon: People/event icon
+Tab 3 — Week-Of Management
+Label: W.M. Headline: Week-Of Management TDs Body: Dedicated Travel Directors
+who own the final week — arrivals, transfers, room blocks, and everything in between so
+your team can focus on the client. Icon: Calendar/checklist icon
+“We Manage” Callout Badge (floats right of the tab row per wireframe):
+✦ We Manage Highlighted TDs Every TD in our network is reviewed, referenced, and
+hand-matched to your program.
+Layout: Three equal-width cards in a horizontal row, with the “We Manage” callout
+badge styled as a navy pill/badge floating top-right of the card group.
+Design notes:
+Cards: white background, 1px border, subtle box shadow, teal left-border accent on
+hover
+Active/selected tab state in navy with white text
+Badge: teal background, white text, subtle checkmark icon
+Mobile: horizontal scroll or vertical stack
+Section 4 — Who We Are + Why
+Purpose: Brief credibility section that humanizes the company and answers “why not
+just use LinkedIn?” Split into two natural sub-sections per wireframe: “Who We Are”
+left, “Why” right (separated by a visual divider).
+Layout: Two-column, equal width. Thin horizontal rule or wavy line divider between
+them (matches whiteboard’s ~~~ notation).
+
+-- 3 of 9 --
+
+Left Column — Who We Are
+Eyebrow: WHO WE ARE Copy:
+Event ConnecTD is a two-sided marketplace purpose-built for the MICE industry. We
+exist to eliminate the 10–20 hours planners lose sourcing Travel Directors through
+word-of-mouth and LinkedIn — and to give great TDs the visibility they deserve.
+We’re not a staffing agency. We don’t bill your TD’s labor. We simply connect the
+right people and charge an 18% finder’s fee — only on TD labor cost — billed
+separately after placement.
+Right Column — Why Event ConnecTD
+Eyebrow: WHY IT MATTERS Copy:
+The status quo is broken. Planners rely on whoever they happened to work with
+before. Great TDs go undiscovered. Programs suffer for it.
+We built the infrastructure that the industry was missing: a vetted network, a
+structured RFP process, and a match guarantee — so you never send an RFP into the
+void again.
+Design notes:
+Light gray background #F7F9FC to visually separate this section from the hero
+Wavy teal divider line between the two columns (references whiteboard sketch)
+No cards — clean prose layout with generous white space
+Optional: small founder/team photo or brand mark in the corner
+Section 5 — Three Value Props + Platform Preview
+Purpose: The core “pitch” section from the whiteboard — answers the three buyer
+questions: How much do they save? Why choose Event ConnecTD? What exactly do
+they get? Paired with a visual of the platform to build product confidence.
+Layout: Left column = three value prop rows. Right column = platform screenshot or
+stylized phone/desktop mockup.
+Section headline:
+Built for planners who can’t afford to guess.
+
+-- 4 of 9 --
+
+Three Value Props (O~ bullets from whiteboard):
+Value Prop 1 — How Much They Save
+Icon: Dollar sign / savings chart Headline: Save Time and Money on Every Program
+Body: Our 18% finder’s fee sits below the 20–22% industry standard — and you recover
+the 10–20 hours you’d spend sourcing on your own. The average client saves $3,200+ in
+opportunity cost per event. CTA link: See your savings → (links to /savings-calculator)
+Value Prop 2 — Why Choose Event ConnecTD
+Icon: Verified badge / checkmark Headline: Every TD is Vetted. No Exceptions. Body:
+All Travel Directors on our platform submit past program references and are reviewed
+before listing. You only see qualified candidates — not a random inbox dump.
+Value Prop 3 — What You Get
+Icon: Workflow / connected nodes Headline: A Structured Process, Not a Referral
+Hotline Body: Submit an RFP, receive curated TD candidates within 48 hours, select
+your match, and go. We handle introductions. You handle the program.
+Right Column — Platform Visual:
+Stylized screenshot of the Event ConnecTD connector tool / TD profile cards
+Or: a clean device mockup (laptop/tablet) showing the RFP submission flow
+Teal accent border on device frame
+Design notes:
+Section background: white
+Value prop rows separated by thin dividers, not cards
+Icons: teal, outline style, 24–28px
+Platform visual: slight shadow and tilt (perspective/3D) to feel premium
+Mobile: value props stack, mockup appears below
+Section 6 — Savings Calculator + Top Value Add
+Purpose: Interactive proof of value. The calculator already exists at /savings-
+calculator and should be embedded or linked here. The “Top Value Add” callout (from
+
+-- 5 of 9 --
+
+whiteboard) is a supporting copy block that frames the calculator and reinforces ROI
+before the visitor calculates.
+Layout: Two-column. Left = image or illustrated graphic + “Top Value Add” copy block.
+Right = embedded calculator widget or preview of it.
+Left Column — Top Value Add Copy
+Eyebrow: THE #1 REASON PLANNERS SWITCH Headline:
+The real cost isn’t our fee. It’s what you lose when sourcing goes wrong.
+Body:
+A mis-matched TD, a frantic last-minute replacement, or hours lost chasing
+references — that’s the hidden cost of the status quo. Event ConnecTD planners
+consistently report the biggest value add isn’t just the TD we find — it’s the hours,
+stress, and scramble we eliminate.
+Supporting stat callout (bold/large):
+“10–20 hours saved per event sourcing cycle”
+Right Column — Calculator Widget
+Eyebrow: CALCULATE YOUR SAVINGS Headline: What could Event ConnecTD save your
+team? Body (brief): Answer four quick questions and see your estimated savings in
+time and cost. Embedded: /savings-calculator component (the four-question quiz +
+Chart.js bar chart output) CTA below: Submit Your RFP After You See the Numbers →
+Design notes:
+Section background: dark navy #0D2137 — high contrast, feels like a “reveal”
+moment after scrolling through lighter sections
+All text: white
+Calculator card: white card on dark background, teal accents on inputs and results
+bar
+Supporting stat: oversized teal number treatment
+Image/graphic left: abstract event graphic or stylized city/conference backdrop in
+muted navy tones
+
+-- 6 of 9 --
+
+Section 7 — How It Works (Right-side numbered list from
+whiteboard)
+Purpose: Reduce friction for first-time visitors by showing exactly what happens after
+they click “Submit RFP.” The whiteboard shows three numbered steps on the right side.
+Section headline:
+From RFP to matched TD in 48 hours.
+Three Steps:
+Step 1 — Submit Your RFP
+Number: 01 Headline: Tell Us About Your Program Body: Fill out a simple RFP with
+your event dates, destination, group size, and TD requirements. Takes less than 5
+minutes. Visual: RFP form icon or screenshot
+Step 2 — Personalized Matching
+Number: 02 Headline: We Match You to the Right TD Body: Our team reviews your RFP
+and surfaces curated, pre-vetted Travel Director candidates within 48 hours — not a
+generic list, a real match. Visual: Profile card / matching graphic
+Step 3 — Confirm and Go
+Number: 03 Headline: Review, Select, and Lock It In Body: Review your TD
+candidates, connect directly, and confirm your match. You pay your TD directly. We
+invoice only our 18% finder’s fee separately. Visual: Confirmation / handshake icon
+Layout: Horizontal three-step layout with connected arrow/line between steps. Or
+vertical timeline for mobile.
+Design notes:
+Background: light gray #F7F9FC
+Step numbers: large, teal, slightly transparent — used as background texture
+element behind each card
+Arrow connectors between steps in teal
+Bottom CTA button: Submit Your RFP → (teal, full-width on mobile)
+
+-- 7 of 9 --
+
+Section 8 — Footer CTA / Closing Banner
+Purpose: Catch the visitors who scrolled to the bottom but haven’t converted. Last
+chance before footer.
+Layout: Full-width banner, centered content.
+Headline:
+Ready to stop searching and start staffing?
+Subheadline:
+Send your RFP today. We’ll have curated TD candidates in your inbox within 48 hours.
+CTA Button: Submit Your RFP (white text, teal background, large) Secondary link:
+Questions? Talk to the team →
+Design notes:
+Background: teal #1D9E75 — the warmest, most action-oriented color in the palette
+White text throughout
+Subtle texture or wave graphic behind text
+No images — pure typography and CTA
+Section 9 — Footer
+Content:
+Logo + one-line tagline: “The B2B marketplace for Travel Directors.”
+Column 1: Company — About, How It Works, Pricing, Blog
+Column 2: For Clients — Submit RFP, Savings Calculator, Case Studies
+Column 3: For TDs — Join the Network, TD Resources
+Column 4: Contact — hello@eventconnectd.com, LinkedIn
+Bottom bar: © 2025 Event ConnecTD LLC · Privacy Policy · Terms of Service
+Disclaimer: Event ConnecTD does not handle TD labor billing. Clients pay Travel
+Directors directly.
+Design notes:
+
+-- 8 of 9 --
+
+Dark navy #0D2137 background, white text
+Teal used only for hover states on links
+Billing disclaimer in small italic text, clearly visible
+Prompt Strategy Notes (for Claude Design sessions)
+When prompting for each section individually:
+1. Always lead with brand context: “Event ConnecTD is a B2B marketplace for Travel
+Directors in the MICE industry. Brand colors: navy #185FA5, dark navy #0D2137, teal
+#1D9E75.”
+2. Specify the section number and purpose from this doc first
+3. Paste the Content block verbatim as the copy to use
+4. End with Design Notes as constraints
+5. Request desktop + mobile view if the tool supports it
+6. Keep section prompts isolated — one prompt per section for cleaner output
+Priority order for design sessions:
+1. Hero (Section 2) — most important, sets the visual tone
+2. How It Works (Section 7) — high-converting, needs to be clear
+3. Value Props + Platform Preview (Section 5) — central pitch
+4. Savings Calculator (Section 6) — interactive proof
+5. Service Category Tabs (Section 3) — educational
+6. All others to follow
+
+-- 9 of 9 --
+
