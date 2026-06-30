@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Event ConnecTD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-section { padding: 80px 40px 96px; }
+  .contact-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; max-width: 1180px; margin: 0 auto; align-items: start; }
+
+  .form-card { background: #fff; border: 1px solid #E7EDF3; border-radius: 22px; padding: 40px; box-shadow: 0 24px 60px rgba(13,33,55,0.08); }
+  .form-card h2 { font-weight: 700; font-size: 26px; margin: 0 0 6px; color: #0D2137; letter-spacing: -0.01em; }
+  .form-card .sub { font-size: 15px; color: #5A6B7A; margin: 0 0 28px; line-height: 1.55; }
+  .field { margin-bottom: 18px; }
+  .field.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field label { display: block; font-size: 13.5px; font-weight: 600; color: #34465A; margin-bottom: 7px; }
+  .field input, .field select, .field textarea {
+    width: 100%; font-family: inherit; font-size: 15px; color: #1A1A1A;
+    padding: 12px 14px; border: 1px solid #D8E1EA; border-radius: 11px; background: #fff;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: #1D9E75; box-shadow: 0 0 0 3px rgba(29,158,117,0.14);
+  }
+  .field textarea { resize: vertical; min-height: 120px; }
+  .form-submit { width: 100%; border: none; cursor: pointer; background: #1D9E75; color: #fff; font-weight: 700; font-size: 16px; padding: 15px; border-radius: 30px; box-shadow: 0 4px 16px rgba(29,158,117,0.3); transition: background .15s, transform .15s; }
+  .form-submit:hover { background: #17855f; transform: translateY(-1px); }
+  .form-status { margin-top: 16px; font-size: 14.5px; line-height: 1.5; display: none; }
+  .form-status.ok { display: block; color: #147a59; background: #F2FBF7; border: 1px solid #C9EBDB; padding: 12px 14px; border-radius: 11px; }
+  .form-status.err { display: block; color: #b00020; background: #fdf0f1; border: 1px solid #f3c9cf; padding: 12px 14px; border-radius: 11px; }
+
+  .info-stack { display: flex; flex-direction: column; gap: 30px; }
+  .info-block h3 { font-weight: 700; font-size: 21px; margin: 0 0 8px; color: #0D2137; }
+  .info-block p { font-size: 15.5px; line-height: 1.65; color: #5A6B7A; margin: 0; }
+  .info-divider { height: 1px; background: #E7EDF3; }
+  .direct-card { background: #0D2137; color: #fff; border-radius: 18px; padding: 28px; }
+  .direct-card h3 { font-weight: 700; font-size: 18px; margin: 0 0 16px; color: #fff; }
+  .direct-row { display: flex; align-items: center; gap: 12px; font-size: 15px; color: #C5D8E8; margin-bottom: 12px; }
+  .direct-row:last-child { margin-bottom: 0; }
+  .direct-row svg { flex: none; color: #2DBA8A; }
+  .direct-row a { color: #fff; font-weight: 600; transition: color .15s; }
+  .direct-row a:hover { color: #2DBA8A; }
+  .direct-note { font-size: 13.5px; color: #8FB0CC; }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    .contact-section { padding: 56px 24px 72px; }
+    .form-card { padding: 28px; }
+    .field.row2 { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="project/uploads/Event ConnecTD logo.png" alt="Event ConnecTD"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://travel-director-link-keatonherz.replit.app/api/login" class="nav-signin" target="_blank" rel="noopener">Sign In</a>
+      <a href="#contact-form" class="nav-cta">Submit an RFP</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h1>Let's staff your next program.</h1>
+    <p>Tell us about your event and we'll have curated, pre-vetted Travel Director candidates in your inbox within 48 hours.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <!-- FORM -->
+    <div class="form-card" id="contact-form">
+      <h2>For Companies Hiring</h2>
+      <p class="sub">Share a few details about your program — no commitment, no account required.</p>
+      <form id="rfp-form" novalidate>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-company">Company</label>
+          <input type="text" id="f-company" name="company" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-email">Work Email</label>
+          <input type="email" id="f-email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field row2">
+          <div>
+            <label for="f-date">Event Date</label>
+            <input type="date" id="f-date" name="eventDate">
+          </div>
+          <div>
+            <label for="f-size">Program Size</label>
+            <select id="f-size" name="programSize">
+              <option>Under 50</option>
+              <option>50–150</option>
+              <option>150–500</option>
+              <option>500+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-dest">Destination</label>
+          <input type="text" id="f-dest" name="destination" placeholder="City, region, or “TBD”">
+        </div>
+        <div class="field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" placeholder="Tell us about your program and what you're looking for in a Travel Director."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Submit RFP →</button>
+        <div class="form-status" id="form-status"></div>
+      </form>
+    </div>
+
+    <!-- INFO -->
+    <div class="info-stack">
+      <div class="info-block">
+        <h3>For Travel Directors &amp; Meeting Planners</h3>
+        <p>Questions about joining or building your profile? Reach out and a team member will guide you through the process.</p>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-block">
+        <h3>For Partnerships</h3>
+        <p>DMC, hotel, AV company, or event vendor? We're open to conversations with industry partners.</p>
+      </div>
+      <div class="direct-card">
+        <h3>Direct Contact</h3>
+        <div class="direct-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          <a href="mailto:keaton.herzberg@eventconnectd.com">keaton.herzberg@eventconnectd.com</a>
+        </div>
+        <div class="direct-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+15152171890">+1-515-217-1890</a>
+        </div>
+        <div class="direct-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span class="direct-note">Response time: within one business day</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="project/uploads/Event ConnecTD logo.png" alt="Event ConnecTD">
+        <p class="footer-tagline">The B2B marketplace for Travel Directors.</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Company</p>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="index.html#how">How It Works</a>
+          <a href="about.html#fee">Pricing</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">For Clients</p>
+        <div class="footer-links">
+          <a href="contact.html">Submit RFP</a>
+          <a href="index.html#calc">Savings Calculator</a>
+          <a href="#">Case Studies</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">For TDs</p>
+        <div class="footer-links">
+          <a href="services.html">Join the Network</a>
+          <a href="#">TD Resources</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:keaton.herzberg@eventconnectd.com">keaton.herzberg@eventconnectd.com</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-disclaimer">Disclaimer: Event ConnecTD does not handle TD labor billing. Clients pay Travel Directors directly.</p>
+    <div class="footer-bottom">
+      <span>© 2025 Event ConnecTD LLC</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONTACT FORM → HUBSPOT
+   ------------------------------------------------------------
+   Paste your HubSpot Forms identifiers below (Marketing → Forms
+   → your form → Share → Embed code). Once portalId + formGuid
+   are filled in, submissions POST straight into HubSpot.
+   Until then, the form falls back to opening an email draft.
+
+   `fieldMap` maps this form's fields to your HubSpot property
+   internal names — adjust the right-hand values if your HubSpot
+   properties are named differently.
+   ============================================================ */
+const HUBSPOT = {
+  portalId: "",   // e.g. "1234567"
+  formGuid: "",   // e.g. "a1b2c3d4-1234-5678-90ab-cdef12345678"
+  region:   "na1",
+  fieldMap: {
+    name:        "firstname",
+    company:     "company",
+    email:       "email",
+    eventDate:   "event_date",
+    programSize: "program_size",
+    destination: "destination",
+    message:     "message"
+  }
+};
+const FALLBACK_EMAIL = "keaton.herzberg@eventconnectd.com";
+
+(function () {
+  const form   = document.getElementById('rfp-form');
+  const status = document.getElementById('form-status');
+
+  function setStatus(type, msg) {
+    status.className = 'form-status ' + type;
+    status.textContent = msg;
+  }
+
+  function values() {
+    return {
+      name:        form.name.value.trim(),
+      company:     form.company.value.trim(),
+      email:       form.email.value.trim(),
+      eventDate:   form.eventDate.value,
+      programSize: form.programSize.value,
+      destination: form.destination.value.trim(),
+      message:     form.message.value.trim()
+    };
+  }
+
+  function mailtoFallback(v) {
+    const lines = [
+      'Name: ' + v.name,
+      'Company: ' + v.company,
+      'Work Email: ' + v.email,
+      'Event Date: ' + (v.eventDate || '—'),
+      'Program Size: ' + v.programSize,
+      'Destination: ' + (v.destination || '—'),
+      '',
+      v.message
+    ];
+    const href = 'mailto:' + FALLBACK_EMAIL +
+      '?subject=' + encodeURIComponent('New RFP — ' + (v.company || v.name)) +
+      '&body=' + encodeURIComponent(lines.join('\n'));
+    window.location.href = href;
+    setStatus('ok', 'Opening your email app to send this RFP to our team…');
+  }
+
+  async function submitToHubspot(v) {
+    const url = 'https://api.hsforms.com/submissions/v3/integration/submit/' +
+      HUBSPOT.portalId + '/' + HUBSPOT.formGuid;
+    const fields = Object.keys(HUBSPOT.fieldMap)
+      .filter(k => v[k] !== '' && v[k] != null)
+      .map(k => ({ name: HUBSPOT.fieldMap[k], value: String(v[k]) }));
+    const body = {
+      fields,
+      context: { pageUri: location.href, pageName: document.title }
+    };
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) throw new Error('HubSpot returned ' + res.status);
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const v = values();
+    if (!v.name || !v.email) {
+      setStatus('err', 'Please add your name and a work email so we can reach you.');
+      return;
+    }
+    const useHubspot = HUBSPOT.portalId && HUBSPOT.formGuid;
+    if (!useHubspot) { mailtoFallback(v); return; }
+    setStatus('ok', 'Sending…');
+    try {
+      await submitToHubspot(v);
+      form.reset();
+      setStatus('ok', "Thanks — your RFP is in. We'll be in touch within one business day.");
+    } catch (err) {
+      console.error(err);
+      mailtoFallback(v);
+    }
+  });
+})();
+</script>
+</body>
+</html>
