@@ -48,6 +48,8 @@
 
   @media (max-width: 900px) {
     .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    .contact-grid > * { min-width: 0; }
+    .direct-row a { overflow-wrap: anywhere; }
     .contact-section { padding: 56px 24px 72px; }
     .form-card { padding: 28px; }
     .field.row2 { grid-template-columns: 1fr; gap: 0; }
@@ -58,6 +60,7 @@
 
 <!-- NAV -->
 <nav class="nav">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" aria-hidden="true">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="project/uploads/Event ConnecTD logo.png" alt="Event ConnecTD"></a>
     <div class="nav-links">
@@ -70,6 +73,15 @@
       <a href="https://platform.eventconnectd.com/api/login" class="nav-signin" target="_blank" rel="noopener">Sign In</a>
       <a href="#contact-form" class="nav-cta">Submit an RFP</a>
     </div>
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+  </div>
+  <div class="nav-mobile">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="https://platform.eventconnectd.com/api/login" class="m-signin" target="_blank" rel="noopener">Sign In</a>
+    <a href="contact.html">Submit an RFP</a>
   </div>
 </nav>
 

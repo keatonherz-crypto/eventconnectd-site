@@ -68,6 +68,12 @@ a { text-decoration: none; color: inherit; }
 }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(29,158,117,0.32); color: #fff; }
 
+/* Mobile hamburger nav */
+.nav-toggle-cb { display: none; }
+.nav-burger { display: none; cursor: pointer; width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--border); align-items: center; justify-content: center; flex-direction: column; gap: 5px; flex: none; background: #fff; }
+.nav-burger span { display: block; width: 18px; height: 2px; background: var(--navy-dark); border-radius: 2px; transition: transform .2s, opacity .2s; }
+.nav-mobile { display: none; }
+
 /* ---------- BUTTONS ---------- */
 .btn-primary {
   background: var(--teal); color: #fff; font-weight: 600; font-size: 16px;
@@ -156,11 +162,31 @@ footer { background: var(--navy-dark); color: #fff; padding: 72px 40px 40px; }
 
 /* ---------- RESPONSIVE (shared) ---------- */
 @media (max-width: 900px) {
+  .nav-inner { padding: 12px 20px; gap: 12px; }
   .nav-links { display: none; }
+  .nav-signin { display: none; }
+  .nav-cta { padding: 10px 16px; font-size: 14px; }
+  .nav-burger { display: flex; }
+  #nav-toggle:checked ~ .nav-inner .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  #nav-toggle:checked ~ .nav-inner .nav-burger span:nth-child(2) { opacity: 0; }
+  #nav-toggle:checked ~ .nav-inner .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  #nav-toggle:checked ~ .nav-mobile { display: flex; }
+  .nav-mobile { flex-direction: column; border-top: 1px solid var(--border); background: #fff; padding: 8px 20px 16px; }
+  .nav-mobile a { padding: 13px 4px; font-size: 16px; font-weight: 600; color: var(--text-slate); border-bottom: 1px solid #F0F4F8; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a.active { color: var(--teal); }
+  .nav-mobile .m-signin { color: var(--navy); }
+
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-links a, .footer-tagline { overflow-wrap: anywhere; }
+  footer { padding: 56px 24px 32px; }
+  .footer-cta { padding: 72px 24px; }
   .footer-cta h2 { font-size: 34px; }
   .page-hero h1 { font-size: 38px; }
   .page-hero { padding: 72px 24px 80px; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* ---------- LEGAL / PROSE PAGES ---------- */
