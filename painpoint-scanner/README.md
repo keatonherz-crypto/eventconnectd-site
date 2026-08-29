@@ -27,6 +27,7 @@ pip install -r requirements.txt
 cp .env.example .env          # fill in the Reddit and Anthropic credentials
 
 export DATABASE_URL=sqlite:///painpoints.db   # Postgres in production
+python -m painpoint doctor        # confirm the credentials actually work
 python -m painpoint initdb
 python -m painpoint collect
 python -m painpoint classify
@@ -53,6 +54,7 @@ Create a **script**-type app at <https://reddit.com/prefs/apps>, then fill in
 
 | Command | What it does |
 |---|---|
+| `painpoint doctor` | Check credentials, connectivity and config |
 | `painpoint initdb` | Create the tables |
 | `painpoint collect` | One sweep of the configured subreddits |
 | `painpoint classify` | Score everything that passed stage 1 |
@@ -62,6 +64,11 @@ Create a **script**-type app at <https://reddit.com/prefs/apps>, then fill in
 | `painpoint report` | Write the weekly digest to `reports/` |
 | `painpoint status` | Corpus counts |
 | `painpoint mcp` | Run the MCP server on stdio |
+
+`doctor` makes a live call to each service, because a key being *present* tells
+you nothing about whether it works. It reads one Reddit post and asks Claude for
+one token, so a run costs a fraction of a cent; `--offline` checks only that the
+credentials exist. It exits non-zero if anything failed, so cron can gate on it.
 
 Useful flags: `--vertical` to limit a sweep, `--limit` to cap a classify run,
 `--no-llm` for a digest with no synthesis, `--stdout` to print it instead of

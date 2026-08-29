@@ -1,5 +1,6 @@
 """Command line entry point.
 
+    painpoint doctor                 check credentials and connectivity
     painpoint initdb                 create tables
     painpoint collect                one sweep of Reddit into the database
     painpoint classify               score everything that passed stage 1
@@ -36,6 +37,15 @@ def _build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("initdb", help="Create tables if they do not exist")
+
+    doctor = sub.add_parser(
+        "doctor", help="Check credentials, connectivity and config before a sweep"
+    )
+    doctor.add_argument(
+        "--offline",
+        action="store_true",
+        help="Skip the live API calls; only check that credentials are present",
+    )
 
     collect = sub.add_parser("collect", help="One sweep of the configured subreddits")
     collect.add_argument("--vertical", action="append", help="Limit to a vertical (repeatable)")
@@ -112,6 +122,13 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     config = load_config(args.config)
+
+    if args.command == "doctor":
+        from .doctor import format_report, run_checks
+
+        checks = run_checks(config, args.database_url, offline=args.offline)
+        print(format_report(checks))
+        return 1 if any(c.status == "fail" for c in checks) else 0
 
     with Database.connect(args.database_url) as db:
         if args.command == "initdb":

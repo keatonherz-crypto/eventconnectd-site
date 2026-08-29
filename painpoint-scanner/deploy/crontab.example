@@ -8,9 +8,11 @@ APP_DIR=/opt/painpoint-scanner
 PY=/opt/painpoint-scanner/.venv/bin/python
 MAILTO=""
 
+# Gate the sweep on a working setup: doctor exits non-zero if a credential has
+# expired, which is otherwise only discovered by a sweep that collects nothing.
 # Collect every 6 hours. The sweep window overlaps the interval on purpose:
 # duplicates are free (dedup on Reddit ID), gaps are not.
-0 */6 * * * cd $APP_DIR && $PY -m painpoint collect >> logs/collect.log 2>&1
+0 */6 * * * cd $APP_DIR && $PY -m painpoint doctor --offline >> logs/doctor.log 2>&1 && $PY -m painpoint collect >> logs/collect.log 2>&1
 
 # Classify 20 minutes later, once the sweep has settled.
 20 */6 * * * cd $APP_DIR && $PY -m painpoint classify >> logs/classify.log 2>&1
