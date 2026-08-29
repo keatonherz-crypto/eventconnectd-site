@@ -1,0 +1,69 @@
+# Target subreddits, grouped by vertical.
+#
+# Pick verticals you actually know something about -- domain knowledge is what
+# makes the output readable. Add and remove subs freely; the collector treats
+# this file as the source of truth on every sweep, and `add_subreddit` in the
+# MCP server edits it in place.
+
+verticals:
+  smallbusiness:
+    subs: [smallbusiness, Entrepreneur, freelance, sweatystartup, EtsySellers]
+  productivity:
+    subs: [productivity, notion, ObsidianMD, getdisciplined]
+  trades:
+    subs: [Construction, HVAC, Plumbing, electricians]
+  healthcare_admin:
+    subs: [nursing, medicalcoding, physicaltherapy]
+  events:
+    subs: [eventplanning, weddingplanning, AskHR]
+
+# Rotated across sweeps -- each sweep uses a slice of this list so that over a
+# day of 6-hourly runs every term gets used, without burning the rate limit on
+# a single pass.
+query_terms:
+  - "is there an app"
+  - "does anyone know a tool"
+  - "how do you all handle"
+  - "I hate that"
+  - "wish there was"
+  - "so annoying"
+  - "waste of time"
+  - "spreadsheet hell"
+  - "manually"
+  - "workaround"
+  - "any alternative to"
+
+collector:
+  # How far back /new is walked on each sweep. Overlap with the cron interval
+  # is deliberate: duplicates are free (dedup on Reddit ID), gaps are not.
+  window_hours: 8
+  # Per listing, per sub. Reddit's listing endpoints cap out near 1000 anyway.
+  new_limit: 100
+  search_limit: 50
+  # Query terms used per sweep, rotated by sweep index.
+  terms_per_sweep: 4
+  # Top-level comments pulled per post that survives the stage 1 filter.
+  comments_per_post: 25
+
+classifier:
+  model: claude-haiku-4-5
+  batch_size: 20
+  # Post bodies are truncated to this many characters before batching.
+  max_body_chars: 1500
+
+clusterer:
+  # hashing: pure Python, no API key, lexical similarity. Fine to start.
+  # openai: text-embedding-3-small, semantic, needs OPENAI_API_KEY. Switch to
+  # this once you have real volume -- lexical matching misses the same pain
+  # described in different words, which is most of them.
+  embedding_backend: hashing
+  openai_model: text-embedding-3-small
+  # Leave unset to use the backend default (hashing 0.62, openai 0.82). The two
+  # scales are not comparable, so re-tune after switching backends.
+  similarity_threshold: null
+
+reporter:
+  # Ideas surfaced per vertical. Five is what a person can actually follow up on.
+  top_n_per_vertical: 5
+  threads_per_idea: 5
+  synthesis_model: claude-opus-5
