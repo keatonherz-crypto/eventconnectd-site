@@ -1,0 +1,18 @@
+# Collector
+praw>=7.7,<8
+
+# Classifier and report synthesis
+anthropic>=1.0
+
+# Config
+PyYAML>=6.0
+
+# Postgres. Not needed if DATABASE_URL points at a SQLite file.
+psycopg[binary]>=3.1
+
+# MCP server. 2.x renamed FastMCP to MCPServer; this code targets 2.x.
+mcp>=2.0
+
+# Optional: semantic embeddings for clustering. Without it the clusterer falls
+# back to the built-in hashing backend, which needs no key and no network.
+openai>=1.0
